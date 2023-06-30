@@ -79,7 +79,6 @@ $(document).ready(function(){
     })
     
     let form_name = localStorage.getItem('form_name')
-    console.log("form_name", form_name)
 
     if(form_name != null){
         let about_p = $('#about p')
@@ -95,8 +94,16 @@ $(document).ready(function(){
         })
     }
     
-
     if(window.location.href.indexOf('about') > -1){
-        $('#acordeon').accordion()
+        $('#acordeon').accordion();
+    }
+
+    if(window.location.href.indexOf('reloj') > -1){
+        setInterval(function(){
+            let reloj = moment().format('h:mm:ss a')
+            $('#reloj').html(reloj)
+        }, 1000)
+        
+        
     }
 });
