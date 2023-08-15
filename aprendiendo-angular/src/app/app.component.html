@@ -296,11 +296,18 @@
 <!-- Toolbar -->
 <div>
 
-  <span>{{ title }}</span>
+  <h1>{{ title }}</h1>
 
-  <videojuego></videojuego>
+  <p>{{ descripcion }}</p>
+
+  <button (click)="ocultarVideojuegos(false)" *ngIf='mostrar_videojuegos'>Ocultar</button>
+  <button (click)="ocultarVideojuegos(true)" *ngIf='!mostrar_videojuegos'>Mostrar</button>
+
+  <videojuego *ngIf="mostrar_videojuegos"></videojuego>
 
   <zapatillas></zapatillas>
+
+  <cursos></cursos>
 </div>
 
 
